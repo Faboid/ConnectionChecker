@@ -29,7 +29,7 @@ namespace ConnectionCheckerUI {
         }
 
         private void CallLibraryLogic() {
-            connectionAttempt = new Retrier(1000);
+            connectionAttempt = new Retrier();
             connectionAttempt.ConnectionIsBack += ConnectionWorks;
         }
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConnectionCheckerUI"
         mc:Ignorable="d"
-        Title="ConnectionChecker" Height="163" Width="336" Background="#FF1A1A1A" ResizeMode="CanMinimize">
+        Title="ConnectionChecker" Height="163" Width="336" Background="#FF1A1A1A" ResizeMode="CanMinimize" Icon="/ConnectionChecker.png">
     <Grid>
         <TextBox x:Name="DisplayText" IsReadOnly="True" HorizontalAlignment="Center" Text="Checking whether the internet connection is present... 
                  A sound will notify you once the connection has been established." TextWrapping="Wrap" VerticalAlignment="Center" Width="248" Height="87" Background="#FF604C4C" FontSize="16" TextAlignment="Center" Foreground="#FFD1D1D1"/>

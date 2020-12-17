@@ -4,10 +4,19 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>ConnectionChecker.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ConnectionChecker.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ConnectionCheckerLibrary\ConnectionCheckerLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ConnectionChecker.png" />
   </ItemGroup>
 
   <ItemGroup>
