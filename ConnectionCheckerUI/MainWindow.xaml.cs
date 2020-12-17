@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,13 +29,14 @@ namespace ConnectionCheckerUI {
         }
 
         private void CallLibraryLogic() {
-            connectionAttempt = new Retrier();
+            connectionAttempt = new Retrier(1000);
             connectionAttempt.ConnectionIsBack += ConnectionWorks;
         }
 
         private void ConnectionWorks(object sender, EventArgs e) {
             //implement sound and (maybe) focus
             EditDisplayText("The internet connection functions as normal.");
+            PlaySound();
         }
 
         private void EditDisplayText(string text) {
@@ -43,6 +45,11 @@ namespace ConnectionCheckerUI {
             } else {
                 DisplayText.Text = text;
             }
+        }
+
+        private void PlaySound() {
+            SoundPlayer player = new SoundPlayer(Properties.Resources.The_Wandering_Loop);
+            player.Play();
         }
     }
 }
