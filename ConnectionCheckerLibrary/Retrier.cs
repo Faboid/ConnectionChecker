@@ -6,13 +6,16 @@ using System.Timers;
 namespace ConnectionCheckerLibrary {
 
     /// <summary>
-    /// Attempts connecting until it gets a positive result, then sends the message to the UI.
+    /// Attempts connecting until it gets a positive result, then triggers a "ConnectionIsBack" event.
     /// </summary>
     public class Retrier {
         private Timer timer;
-        public EventHandler ConnectionIsBack;
+        public event EventHandler ConnectionIsBack;
 
-        public Retrier(long milliseconds = 1000) {
+        //note: this could be refactored to fire Timer_Elapsed instantly for the first time, 
+        //but I've left it as it is because this application is meant to be used when the internet connection is absent
+        //with the purpose of warning the user only once the connection returns.
+        public Retrier(long milliseconds = 10000) {
             timer = new Timer(milliseconds);
             timer.AutoReset = true;
             timer.Elapsed += Timer_Elapsed;
