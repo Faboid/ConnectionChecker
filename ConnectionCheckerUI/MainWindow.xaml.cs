@@ -34,7 +34,6 @@ namespace ConnectionCheckerUI {
         }
 
         private void ConnectionWorks(object sender, EventArgs e) {
-            //implement sound and (maybe) focus
             EditDisplayText("The internet connection functions as normal.");
             PlaySound();
         }
